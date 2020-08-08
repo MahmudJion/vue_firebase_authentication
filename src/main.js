@@ -3,6 +3,9 @@ import App from "./App.vue";
 import router from "./routes/index";
 import * as firebase from "firebase";
 import store from "./store";
+import { BootstrapVue } from 'bootstrap-vue'
+
+Vue.use(BootstrapVue)
 
 Vue.config.productionTip = false
 
@@ -13,7 +16,8 @@ const configOptions = {
     projectId: "vue-firebase-authenticat-25697",
     storageBucket: "",
     messagingSenderId: "",
-    appId: ""
+    appId: "",
+    measurementId: ""
 }
 
 firebase.initializeApp(configOptions);
