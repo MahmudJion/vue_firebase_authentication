@@ -13,7 +13,7 @@ const firebaseConfig = {
     apiKey: "",
     authDomain: "vue-firebase-authenticat-25697.firebaseapp.com",
     databaseURL: "https://vue-firebase-authenticat-25697.firebaseio.com",
-    projectId: "vue-firebase-authenticat-25697",
+    projectId: "",
     storageBucket: "",
     messagingSenderId: "",
     appId: "",
