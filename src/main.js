@@ -9,7 +9,7 @@ Vue.use(BootstrapVue)
 
 Vue.config.productionTip = false
 
-const configOptions = {
+const firebaseConfig = {
     apiKey: "",
     authDomain: "vue-firebase-authenticat-25697.firebaseapp.com",
     databaseURL: "https://vue-firebase-authenticat-25697.firebaseio.com",
@@ -18,9 +18,9 @@ const configOptions = {
     messagingSenderId: "",
     appId: "",
     measurementId: ""
-}
+  };
 
-firebase.initializeApp(configOptions);
+firebase.initializeApp(firebaseConfig);
 
 firebase.auth().onAuthStateChanged(user => {
     store.dispatch("fetchUser", user);
