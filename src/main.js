@@ -11,8 +11,7 @@ Vue.config.productionTip = false
 
 const firebaseConfig = {
     apiKey: "",
-    authDomain: "vue-firebase-authenticat-25697.firebaseapp.com",
-    databaseURL: "https://vue-firebase-authenticat-25697.firebaseio.com",
+    authDomain: "",
     projectId: "",
     storageBucket: "",
     messagingSenderId: "",
