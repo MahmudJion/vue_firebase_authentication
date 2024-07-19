@@ -1,24 +1,24 @@
 import Vue from "vue";
 import Vuex from "vuex";
+
 Vue.use(Vuex);
-export default new Vuex.Store({
+
+const userModule = {
   state: {
-    user: {
-      loggedIn: false,
-      data: null
-    }
+    loggedIn: false,
+    data: null
   },
   getters: {
-    user(state){
-      return state.user
+    user(state) {
+      return state;
     }
   },
   mutations: {
     SET_LOGGED_IN(state, value) {
-      state.user.loggedIn = value;
+      state.loggedIn = value;
     },
     SET_USER(state, data) {
-      state.user.data = data;
+      state.data = data;
     }
   },
   actions: {
@@ -33,5 +33,11 @@ export default new Vuex.Store({
         commit("SET_USER", null);
       }
     }
+  }
+};
+
+export default new Vuex.Store({
+  modules: {
+    user: userModule
   }
 });
