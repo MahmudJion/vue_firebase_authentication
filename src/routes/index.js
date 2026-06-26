@@ -1,31 +1,39 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Login from '../components/Login'
-import Register from '../components/Register'
-import Dashboard from '../components/Dashboard'
+import Login from '../components/Login';
+import Register from '../components/Register';
+import Dashboard from '../components/Dashboard';
 
-Vue.use(Router)
+Vue.use(Router);
 
 const router = new Router({
-    mode: 'history',
-    base: process.env.BASE_URL,
-    routes: [
-        {
-        path: '/login',
-        name: 'login',
-        component: Login
+  mode: 'history',
+  base: process.env.BASE_URL,
+  routes: [
+    {
+      path: '/',
+      redirect: '/login'
     },
     {
-        path: '/register',
-        name: 'Register',
-        component: Register
+      path: '/login',
+      name: 'login',
+      component: Login
     },
     {
-        path: '/dashboard',
-        name: 'Dashboard',
-        component: Dashboard
+      path: '/register',
+      name: 'register',
+      component: Register
+    },
+    {
+      path: '/dashboard',
+      name: 'dashboard',
+      component: Dashboard
+    },
+    {
+      path: '*',
+      redirect: '/login'
     }
-]
+  ]
 });
 
 export default router
