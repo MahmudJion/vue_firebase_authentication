@@ -13,10 +13,10 @@
           </template>
           <template v-else>
             <li class="nav-item">
-              <router-link to="login" class="nav-link">Login</router-link>
+              <router-link :to="{ name: 'login' }" class="nav-link">Login</router-link>
             </li>
             <li class="nav-item">
-              <router-link to="register" class="nav-link">Register</router-link>
+              <router-link :to="{ name: 'register' }" class="nav-link">Register</router-link>
             </li>
           </template>
         </ul>
@@ -27,13 +27,14 @@
 
 <script>
 import { mapGetters } from "vuex";
-import firebase from "firebase";
+import firebase from "../firebase";
 export default {
+  name: "MainNavbar",
   computed: {
     // map `this.user` to `this.$store.getters.user`
     ...mapGetters({
-      user: "user",
-    }),
+      user: "user"
+    })
   },
   methods: {
     signOut() {
@@ -42,10 +43,10 @@ export default {
         .signOut()
         .then(() => {
           this.$router.replace({
-            name: "home",
+            name: "login"
           });
         });
-    },
-  },
+    }
+  }
 };
 </script>
