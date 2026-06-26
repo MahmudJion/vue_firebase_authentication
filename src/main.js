@@ -1,33 +1,22 @@
 import Vue from "vue";
 import App from "./App.vue";
 import router from "./routes/index";
-import firebase from "firebase/app";
-import "firebase/database";
 import store from "./store";
-import { BootstrapVue } from 'bootstrap-vue'
+import { BootstrapVue } from "bootstrap-vue";
+import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap-vue/dist/bootstrap-vue.css";
+import firebase from "./firebase";
 
-Vue.use(BootstrapVue)
+Vue.use(BootstrapVue);
 
-Vue.config.productionTip = false
-
-const firebaseConfig = {
-    apiKey: "",
-    authDomain: "",
-    projectId: "",
-    storageBucket: "",
-    messagingSenderId: "",
-    appId: "",
-    measurementId: ""
-  };
-
-firebase.initializeApp(firebaseConfig);
+Vue.config.productionTip = false;
 
 firebase.auth().onAuthStateChanged(user => {
-    store.dispatch("fetchUser", user);
-  });
+  store.dispatch("fetchUser", user);
+});
 
 new Vue({
-    router,
-    store,
-    render: h => h(App)
+  router,
+  store,
+  render: h => h(App)
 }).$mount("#app");
