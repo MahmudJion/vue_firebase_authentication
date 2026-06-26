@@ -1,4 +1,7 @@
 # vue_firebase_authentication
+
+> ✅ Production Ready Vue + Firebase authentication scaffold
+
 This repository contains a Vue.js project with a Vuex store module for handling user authentication state using Firebase.
 
 ## Project setup
@@ -23,6 +26,19 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+### Firebase environment variables
+Copy `.env.example` to `.env.local` and add your Firebase values:
+
+```
+VUE_APP_FIREBASE_API_KEY=your-api-key
+VUE_APP_FIREBASE_AUTH_DOMAIN=your-auth-domain
+VUE_APP_FIREBASE_PROJECT_ID=your-project-id
+VUE_APP_FIREBASE_STORAGE_BUCKET=your-storage-bucket
+VUE_APP_FIREBASE_MESSAGING_SENDER_ID=your-messaging-sender-id
+VUE_APP_FIREBASE_APP_ID=your-app-id
+VUE_APP_FIREBASE_MEASUREMENT_ID=your-measurement-id
+```
 
 ## Vuex Store for User Authentication
 ### Features
