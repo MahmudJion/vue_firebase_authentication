@@ -53,8 +53,9 @@
 </template>
 
 <script>
-import firebase from "firebase";
+import firebase from "../firebase";
 export default {
+  name: "LoginPage",
   data() {
     return {
       form: {
@@ -70,7 +71,7 @@ export default {
         .auth()
         .signInWithEmailAndPassword(this.form.email, this.form.password)
         .then(() => {
-          this.$router.replace({ name: "Dashboard" });
+          this.$router.replace({ name: "dashboard" });
         })
         .catch(err => {
           this.error = err.message;
