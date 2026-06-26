@@ -71,8 +71,9 @@
 
 
 <script>
-import firebase from "firebase";
+import firebase from "../firebase";
 export default {
+  name: "RegisterPage",
   data() {
     return {
       form: {
@@ -89,11 +90,9 @@ export default {
         .auth()
         .createUserWithEmailAndPassword(this.form.email, this.form.password)
         .then(data => {
-          data.user
-            .updateProfile({
-              displayName: this.form.name
-            })
-            .then(() => {});
+          return data.user.updateProfile({
+            displayName: this.form.name
+          });
         })
         .catch(err => {
           this.error = err.message;
